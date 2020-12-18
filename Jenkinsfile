@@ -1,14 +1,14 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     stages {
         stage('SCM Checkout') {
             steps {
                 sh 'git clone https://github.com/k-charette/jenkins.docker.maven_java-fundamentals.git'
             }
         }
-        stage('Run Package') {
+        stage('Message') {
             steps {
-                sh "mvn package -Dmaven.test.failure.ignore=true"
+                sh "Hello"
             }
         }
     }
