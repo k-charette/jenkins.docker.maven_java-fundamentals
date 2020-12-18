@@ -6,9 +6,9 @@ pipeline {
                 sh 'git clone https://github.com/k-charette/jenkins.docker.maven_java-fundamentals.git'
             }
         }
-        stage('Message') {
+        stage('Run Package') {
             steps {
-                echo "Hello friends"
+                sh "mvn package -Dmaven.test.failure.ignore=true"
             }
         }
     }
