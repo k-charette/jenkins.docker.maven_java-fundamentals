@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        dockerfile {
+        docker {
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
         } 
@@ -11,9 +11,9 @@ pipeline {
                 sh 'git clone https://github.com/k-charette/jenkins.docker.maven_java-fundamentals.git'
             }
         }
-        stage('Message') {
+        stage('Test') {
             steps {
-                sh "Hello"
+                sh "mvn test"
             }
         }
     }
