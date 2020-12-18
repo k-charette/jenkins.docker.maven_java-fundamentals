@@ -11,14 +11,5 @@ pipeline {
                 sh 'git clone https://github.com/k-charette/jenkins.docker.maven_java-fundamentals.git'
             }
         }
-
-        stage('Compile-Package') {
-            steps {
-                script {
-                    def mvnHome = tool name: 'maven-3', type: 'maven'
-                    sh "${mvnHome}/bin/mvn/package"
-                }
-            }
-        }
     }
 }
